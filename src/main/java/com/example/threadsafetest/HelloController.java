@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
 @RequestMapping("hello")
-//@Scope("prototype")
 @RequiredArgsConstructor
 public class HelloController {
 

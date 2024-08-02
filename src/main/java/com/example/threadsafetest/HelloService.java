@@ -1,26 +1,24 @@
 package com.example.threadsafetest;
 
-import org.springframework.context.annotation.Scope;
+import com.example.threadsafetest.people.People;
+import com.example.threadsafetest.people.PeopleRepository;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.ConcurrentHashMap;
-
 @Service
-//@Scope("prototype")
+@RequiredArgsConstructor
+@Transactional
 public class HelloService {
-    ConcurrentHashMap<String, Integer> concurrentHashMap = new ConcurrentHashMap<>();
-
-    // 초기 값 설정
-    public HelloService() {
-        concurrentHashMap.put("number", 0);
-    }
+    final private PeopleRepository peopleRepository;
 
     public void plusNumber() {
-        concurrentHashMap.computeIfPresent("number", (Key, oldValue) -> oldValue + 1);
+        People people = peopleRepository.findPeopleByName("jun");
+        people.setCount(people.getCount() + 1);
     }
 
     public int getNumber() {
-        return concurrentHashMap.get("number");
+        return peopleRepository.findPeopleByName("jun").getCount();
     }
 
 }
