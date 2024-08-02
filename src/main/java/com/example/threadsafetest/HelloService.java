@@ -8,14 +8,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-//@Transactional
+@Transactional
 public class HelloService {
     final private PeopleRepository peopleRepository;
 
     public synchronized void plusNumber() {
         People people = peopleRepository.findPeopleByName("jun");
         people.setCount(people.getCount() + 1);
-        peopleRepository.save(people);
     }
 
     public synchronized int getNumber() {

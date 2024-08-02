@@ -1,9 +1,6 @@
 package com.example.threadsafetest.people;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -25,4 +22,7 @@ public class People {
         this.name = name;
         this.count = count;
     }
+
+    @Version
+    private Long version;
 }
