@@ -3,17 +3,24 @@ package com.example.threadsafetest;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 @Service
 //@Scope("prototype")
 public class HelloService {
-    private int number = 0;
+    ConcurrentHashMap<String, Integer> concurrentHashMap = new ConcurrentHashMap<>();
 
-    public synchronized void plusNumber() {
-        number++;
+    // 초기 값 설정
+    public HelloService() {
+        concurrentHashMap.put("number", 0);
     }
 
-    public synchronized int getNumber() {
-        return number;
+    public void plusNumber() {
+        concurrentHashMap.computeIfPresent("number", (Key, oldValue) -> oldValue + 1);
+    }
+
+    public int getNumber() {
+        return concurrentHashMap.get("number");
     }
 
 }
