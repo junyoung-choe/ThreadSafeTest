@@ -24,5 +24,5 @@ public class People {
     }
 
     @Version
-    private Long version;
+    private Integer version;
 }

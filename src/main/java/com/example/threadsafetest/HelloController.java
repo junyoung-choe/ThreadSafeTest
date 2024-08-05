@@ -17,10 +17,10 @@ public class HelloController {
     @GetMapping()
     public Integer hello() {
 
-        for (int i = 0; i < 5; i++) {
-            helloService.plusNumber();
-        }
-
+//        for (int i = 0; i < 5; i++) {
+//            helloService.plusNumber();
+//        }
+        helloService.plusNumber();
 
         return helloService.getNumber();
     }
