@@ -22,7 +22,4 @@ public class People {
         this.name = name;
         this.count = count;
     }
-
-    @Version
-    private Integer version;
 }
