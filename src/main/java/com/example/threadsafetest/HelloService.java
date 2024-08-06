@@ -16,7 +16,7 @@ public class HelloService {
     public void plusNumber() {
         People people = peopleRepository.findPeopleByName("jun");
         people.setCount(people.getCount() + 5);
-        peopleRepository.save(people);
+//        peopleRepository.save(people);
     }
 
     @Transactional

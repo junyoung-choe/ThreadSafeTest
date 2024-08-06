@@ -12,6 +12,6 @@ spring:
         format_sql: true
         show_sql: true
         connection:
-          isolation: 2
+          isolation: 0
     hibernate:
       ddl-auto: create
