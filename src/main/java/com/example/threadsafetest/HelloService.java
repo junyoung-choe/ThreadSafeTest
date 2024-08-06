@@ -2,7 +2,7 @@ package com.example.threadsafetest;
 
 import com.example.threadsafetest.people.People;
 import com.example.threadsafetest.people.PeopleRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
@@ -19,9 +19,9 @@ public class HelloService {
 //        peopleRepository.save(people);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public int getNumber() {
-        return peopleRepository.findPeopleByName("jun").getCount();
+        return peopleRepository.findPeopleByNameWithoutLock("jun").getCount();
     }
 
 }
