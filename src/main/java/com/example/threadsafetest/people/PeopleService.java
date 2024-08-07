@@ -1,7 +1,5 @@
-package com.example.threadsafetest;
+package com.example.threadsafetest.people;
 
-import com.example.threadsafetest.people.People;
-import com.example.threadsafetest.people.PeopleRepository;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 
@@ -9,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class HelloService {
+public class PeopleService {
     final private PeopleRepository peopleRepository;
 
     @Transactional

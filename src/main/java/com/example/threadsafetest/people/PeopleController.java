@@ -1,27 +1,26 @@
-package com.example.threadsafetest;
+package com.example.threadsafetest.people;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
-@RequestMapping("hello")
+@RequestMapping("people")
 @RequiredArgsConstructor
-public class HelloController {
+public class PeopleController {
 
 
-    final private HelloService helloService;
+    final private PeopleService peopleService;
 
     @GetMapping()
-    public Integer hello() {
+    public Integer reserve() {
 
 //        for (int i = 0; i < 5; i++) {
 //            helloService.plusNumber();
 //        }
-        helloService.plusNumber();
+        peopleService.plusNumber();
 
-        return helloService.getNumber();
+        return peopleService.getNumber();
     }
 }
