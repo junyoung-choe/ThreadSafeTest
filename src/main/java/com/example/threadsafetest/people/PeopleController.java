@@ -16,9 +16,6 @@ public class PeopleController {
     @GetMapping()
     public Integer reserve() {
 
-//        for (int i = 0; i < 5; i++) {
-//            helloService.plusNumber();
-//        }
         peopleService.plusNumber();
 
         return peopleService.getNumber();
