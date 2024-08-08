@@ -1,4 +1,4 @@
-package com.example.threadsafetest.people.study;
+package com.example.threadsafetest.study;
 
 import com.example.threadsafetest.people.People;
 import com.example.threadsafetest.people.PeopleService;
