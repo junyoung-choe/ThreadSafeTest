@@ -1,4 +1,5 @@
 services:
+
   mysql:
     container_name: mysql
     image: mysql:8.0
@@ -9,3 +10,12 @@ services:
       MYSQL_ROOT_PASSWORD: root
       TZ: Asia/Seoul
       LC_ALL: C.UTF-8
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
+    environment:
+      TZ: Asia/Seoul
