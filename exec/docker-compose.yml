@@ -1,4 +1,5 @@
 services:
+
   mysql:
     container_name: mysql
     image: mysql:8.0
@@ -9,3 +10,15 @@ services:
       MYSQL_ROOT_PASSWORD: root
       TZ: Asia/Seoul
       LC_ALL: C.UTF-8
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    ports:
+      - 6397:6397
+    environment:
+      TZ: Asia/Seoul
+    labels:
+      - "name=redis"
+      - "mode=standalone"
