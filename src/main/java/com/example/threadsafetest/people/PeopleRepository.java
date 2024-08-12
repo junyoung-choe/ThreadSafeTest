@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface PeopleRepository  extends JpaRepository<People, Long> {
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     People findPeopleByName(String name);
 
     @Query("SELECT p FROM People p WHERE p.name = :name")

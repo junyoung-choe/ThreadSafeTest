@@ -16,7 +16,6 @@ public class RedissonConfig {
         RedissonClient redisson = null;
         Config config = new Config();
         config.useSingleServer().setAddress(REDISSON_HOST_PREFIX + "localhost:6379");
-        redisson = Redisson.create(config);
-        return redisson;
+        return Redisson.create(config);
     }
 }
