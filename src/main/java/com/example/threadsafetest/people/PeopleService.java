@@ -54,9 +54,4 @@ public class PeopleService {
             throw new RuntimeException(e);
         }
     }
-
-    @Transactional(readOnly = true)
-    public int getNumber() {
-        return peopleRepository.findPeopleByNameWithoutLock("jun").getCount();
-    }
 }

@@ -13,7 +13,6 @@ public class RedissonConfig {
 
     @Bean
     public RedissonClient redissonClient() {
-        RedissonClient redisson = null;
         Config config = new Config();
         config.useSingleServer().setAddress(REDISSON_HOST_PREFIX + "localhost:6379");
         return Redisson.create(config);

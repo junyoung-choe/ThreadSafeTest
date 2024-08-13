@@ -16,6 +16,5 @@ public class PeopleController {
     @GetMapping()
     public Integer reserve() {
         return peopleService.plusNumber();
-//        return peopleService.getNumber();
     }
 }
