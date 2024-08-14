@@ -3,6 +3,8 @@ package com.example.threadsafetest.people;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 
@@ -53,5 +55,15 @@ public class PeopleService {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    // 해당하는 id의 캐시를 삭제한다.
+    // @CacheEvict(cacheNames = "COUNT", key = "#name", cacheManager = "cacheManager")
+
+    // 해당하는 id의 캐시가 없다면 "아래 로직 실행 후" 등록한다.
+    // 해당하는 id의 캐시가 있다면 가져온다.
+    @Cacheable(cacheNames = "COUNT", key = "#name", condition = "#name != null", cacheManager = "cacheManager")
+    public int getCount(String name) {
+        return peopleRepository.findPeopleByName(name).getCount();
     }
 }

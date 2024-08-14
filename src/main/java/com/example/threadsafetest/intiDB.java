@@ -26,6 +26,9 @@ public class intiDB {
         public void dbInit() {
             People people = new People("jun", 0);
             em.persist(people);
+
+            People peopleForCache = new People("cache", 100);
+            em.persist(peopleForCache);
         }
     }
 }
