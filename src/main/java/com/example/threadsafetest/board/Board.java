@@ -17,11 +17,15 @@ import lombok.ToString;
 public class Board {
     @Id
     @GeneratedValue
-    @Column(name = "people_id")
+    @Column(name = "board_id")
     private Long id;
 
     private String title;
 
     private Integer views;
 
+    public Board(String title, Integer views) {
+        this.title = title;
+        this.views = views;
+    }
 }

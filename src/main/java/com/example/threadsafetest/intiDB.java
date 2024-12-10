@@ -1,5 +1,6 @@
 package com.example.threadsafetest;
 
+import com.example.threadsafetest.board.Board;
 import com.example.threadsafetest.people.People;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
@@ -29,6 +30,9 @@ public class intiDB {
 
             People peopleForCache = new People("cache", 100);
             em.persist(peopleForCache);
+
+            Board board = new Board("조회수 게시판", 0);
+            em.persist(board);
         }
     }
 }
