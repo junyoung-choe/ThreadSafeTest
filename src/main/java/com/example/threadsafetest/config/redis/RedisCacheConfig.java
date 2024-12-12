@@ -1,4 +1,4 @@
-package com.example.threadsafetest.redis;
+package com.example.threadsafetest.config.redis;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
