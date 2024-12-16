@@ -14,3 +14,6 @@ Junit, JMeter
 
     - DB 레벨에서의 동시성
   https://velog.io/@junyoung-choe/DB-%EB%8F%99%EC%8B%9C%EC%84%B1
+
+    - update 쿼리를 통한 동시성 제어
+  https://velog.io/@junyoung-choe/%EB%8F%99%EC%8B%9C%EC%84%B1-%EC%A7%81%EC%A0%91-%EC%BF%BC%EB%A6%AC
